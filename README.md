@@ -1,6 +1,8 @@
 # 🚀 RoutineOS Backend
 
-Backend da plataforma RoutineOS — sistema de produtividade pessoal para gerenciamento de hábitos, tarefas, estudos e foco.
+Backend da plataforma RoutineOS.
+
+Sistema de produtividade pessoal focado em hábitos, tarefas, estudos e gerenciamento de foco.
 
 ## Stack
 
@@ -9,17 +11,19 @@ Backend da plataforma RoutineOS — sistema de produtividade pessoal para gerenc
 - SQLite
 - Pydantic
 - Passlib + bcrypt
-- Python-Jose (JWT)
+- JWT Authentication
 
 ## Features atuais
+
+✅ FastAPI API
+
+✅ SQLite Database
 
 ✅ User CRUD
 
 ✅ Password Hashing
 
-✅ SQLite Database
-
-✅ FastAPI Swagger Docs
+✅ Swagger Docs
 
 ## Estrutura
 
@@ -33,9 +37,21 @@ app/
 └── main.py
 ```
 
-## Rodando localmente
+## Instalação
 
-Criar ambiente:
+Clone:
+
+```bash
+git clone https://github.com/LevyTavares/routineos-backend.git
+```
+
+Entrar:
+
+```bash
+cd routineos-backend
+```
+
+Criar venv:
 
 ```bash
 python -m venv venv
@@ -49,13 +65,13 @@ Linux/macOS:
 source venv/bin/activate
 ```
 
-Instalar dependências:
+Instalar:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Rodar API:
+Executar:
 
 ```bash
 uvicorn app.main:app --reload
@@ -63,4 +79,14 @@ uvicorn app.main:app --reload
 
 Swagger:
 
+```txt
 http://127.0.0.1:8000/docs
+```
+
+## Próximas features
+
+- JWT Login
+- Protected Routes
+- Habits CRUD
+- Tasks CRUD
+- Analytics
