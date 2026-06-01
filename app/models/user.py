@@ -28,3 +28,7 @@ class User(Base):
         String,
         nullable=False
     )
+
+    @property
+    def hashed_password(self) -> str:
+        return self.password
