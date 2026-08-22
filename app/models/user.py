@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
 from app.database import Base
 
@@ -32,3 +33,5 @@ class User(Base):
     @property
     def hashed_password(self) -> str:
         return self.password
+    
+    habits = relationship("Habit", back_populates="owner")

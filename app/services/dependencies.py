@@ -1,6 +1,10 @@
+from typing import Generator
+
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
+
+from app.database import SessionLocal
 
 from app.services.jwt_service import (
     SECRET_KEY,
@@ -10,6 +14,14 @@ from app.services.jwt_service import (
 oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl="login"
 )
+
+
+def get_db() -> Generator:
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 def get_current_user(
